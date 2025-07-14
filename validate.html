@@ -1,0 +1,116 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Content Rating </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+	  background: #edd2d1;
+	  background: linear-gradient(90deg, rgba(237, 210, 209, 1) 0%, rgba(189, 166, 166, 1) 100%);
+    }
+    h2 {
+      color: #cc0000;
+    }
+    .rating-group {
+      margin-bottom: 15px;
+    }
+    label {
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.6s ease;
+    }
+    button:hover {
+      background-color: #912E23;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<center>
+<br> </br>
+  <h2>Rate the Content</h2>
+  <form id="ratingForm" onsubmit="return false;"></form>
+  <button onclick="submitRatings()">Submit Rating</button>
+  <div id="error" class="error"></div>
+  <div id="result" class="result"></div>
+
+  <script>
+    const criteria = ['Content', 'Video Editing', 'Consistency', 'Audience Engagement'];
+    const form = document.getElementById('ratingForm');
+
+    for (let i = 0; i < criteria.length; i++) {
+      const group = document.createElement('div');
+      group.className = 'rating-group';
+
+      const label = document.createElement('label');
+      label.textContent = `${criteria[i]}: `;
+      group.appendChild(label);
+
+      for (let rating = 1; rating <= 5; rating++) {
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = `rating${i}`;
+        radio.value = rating;
+
+        const radioLabel = document.createElement('label');
+        radioLabel.textContent = rating;
+
+        group.appendChild(radio);
+        group.appendChild(radioLabel);
+      }
+
+      form.appendChild(group);
+    }
+
+    function submitRatings() {
+      let total = 0;
+      let count = 0;
+      let errorMsg = '';
+
+      for (let i = 0; i < criteria.length; i++) {
+        const ratings = document.getElementsByName(`rating${i}`);
+        let selected = false;
+
+        for (let r of ratings) {
+          if (r.checked) {
+            total += parseInt(r.value);
+            selected = true;
+            break;
+          }
+        }
+
+        if (!selected) {
+          errorMsg = `❌ Please rate: ${criteria[i]}`;
+          document.getElementById('error').textContent = errorMsg;
+          document.getElementById('result').textContent = '';
+          return;
+        }
+
+        count++;
+      }
+
+      document.getElementById('error').textContent = '';
+
+      const average = (total / count).toFixed(2);
+      document.getElementById('result').textContent = `✅ Thank you! The overall rate is ${average}/5.`;
+    }
+  </script>
+
+</body>
+</html>

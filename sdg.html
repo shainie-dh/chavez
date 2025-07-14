@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="stylesheet" href="styles.css">
+    <title>UN SDGs Registration Form</title>
+    <link rel="stylesheet" href="sdgstyle.css">
+    <script>
+      function confirmSubmission(event) {
+        const confirmed = confirm("Are you sure you want to submit the form?");
+        if (!confirmed) {
+          event.preventDefault();
+        }
+      }
+    </script>
+</head>
+<body>
+<br> </br>
+   <div class="form-container">
+       <font size = "5"> <h2>UN SDGs Registration Form</h2>
+        <form action="#" method="post" onsubmit="confirmSubmission(event)">
+        <font size = "4">    <label for="fullname">Full Name:</label>
+            <input type="text" id="Fullname" name="Fullname" required>
+                  <br></br> <label for="email">Email Address:</label> <input type="email" id="email" name="email" required>
+                  <br></br> <label for="age">Input your Age:</label> <input type="number" id="age" name="age" required>
+                   <br></br>
+<label for="sdgs">Gender:</label> <select>
+                       
+      <option value = "Prefer to keep it disclosed">Prefer to keep it disclosed</option>
+      <option value = "Male"> Male</option>
+      <option value = "Female"> Female</option>
+      <option value = "Agender"> Agender</option>
+      <option value = "Abimegender">Abimegender</option>
+      <option value = "Adamas gender"> Adamas gender</option>
+      <option value = "Aerogender">Aerogender</option>
+      <option value = "Aesthetigender">Aesthetigender</option>
+      <option value = "Affectugender"> Affectugender</option>
+      <option value = "Agenderflux">Agenderflux</option>
+      <option value = "Alexigender">Alexigender</option>
+      <option value = "Aliusgender">Aliusgender</option>
+      <option value = "Amaregender">Amaregender</option>
+      <option value = "Ambigender">Ambigender</option>
+      <option value = "Ambonec">Ambonec</option>
+      <option value = "Amicagender">Amicagender</option>
+      <option value = "Androgyne">Androgyne</option>
+      <option value = "Anesigender">Anesigender</option>
+      <option value = "Angenital">Angenital</option>
+      <option value = "Anogender">Anogender</option>
+      <option value = "Anongender">Anongender</option>
+      <option value = "Antegender">Antegender</option>
+      <option value = "Anxiegender">Anxiegender</option>
+      <option value = "Apagender"> Apagender</option>
+      <option value = "Apconsugender">Apconsugender</option>
+      <option value = "Astergender">Astergender</option>
+      <option value = "Astral gender">Astral gender</option>
+      <option value = "Autigender">Autigender</option>
+      <option value = "Autogender">Autogender</option>
+      <option value = "Axigender">Axigender</option>
+      <option value = "Bigender">Bigender</option>
+      <option value = "Biogender">Biogender</option>
+      <option value = "Blurgender">Blurgender</option>
+      <option value = "Boyflux">Boyflux</option>
+      <option value = "Burstgender">Burstgender</option>
+      <option value = "Caelgender">Caelgender</option>
+      <option value = "Cassgender">Cassgender</option>
+      <option value = "Cassflux">Cassflux</option>
+      <option value = "Cavusgender">Cavusgender</option>
+      <option value = "Cendgender">Cendgender</option>
+      <option value = "Ceterogender">Ceterogender</option>
+      <option value = "Ceterofluid">Ceterofluid</option>
+      <option value = "Cisgender">Cisgender</option>
+      <option value = "Cloudgender">Cloudgender</option>
+      <option value = "Collgender">Collgender</option>
+      <option value = "Colorgender">Colorgender</option>
+      <option value = "Commogender">Commogender</option>
+      <option value = "Condigender">Condigender</option>
+      <option value = "Deliciagender">Deliciagender</option>
+      <option value = "Demifluid">Demifluid</option>
+      <option value = "Demiflux">Demiflux</option>
+      <option value = "Demigender">Demigender</option>
+      <option value = "Domgender">Domgender</option>
+      <option value = "Duragender">Duragender</option>
+      <option value = "Egogender">Egogender</option>
+      <option value = "Epicene">Epicene</option>
+      <option value = "Esspigender">Esspigender</option>
+      <option value = "Exgender">Exgender</option>
+      <option value = "Existigender">Existigender</option>
+      <option value = "Femfluid">Femfluid</option>
+      <option value = "Femgender">Femgender</option>
+      <option value = "Fluidflux">Fluidflux</option>
+      <option value = "Gemigender">Gemigender</option>
+      <option value = "Genderblank">Genderblank</option>
+      <option value = "Genderflow">Genderflow</option>
+      <option value = "Genderfluid">Genderfluid</option>
+      <option value = "Genderfuzz">Genderfuzz</option>
+      <option value = "Genderflux">Genderflux</option>
+      <option value = "Genderpuck">Genderpuck</option>
+      <option value = "Genderqueer">Genderqueer</option>
+      <option value = "Gender witched">Gender witched</option>
+      <option value = "Girlflux">Girlflux</option>
+      <option value = "Healgender">Healgender</option>
+      <option value = "Mirrorgender">Mirrorgender</option>
+      <option value = "Omnigender">Omnigender</option>
+      </select>
+            
+
+ 
+            <br> </br>
+            <br> </br>
+
+          <label>SDG(s) of Interest:</label>
+
+            <br> </br>
+
+            <div class="sdgs-options">
+
+                	<label><input type="checkbox" name="sdg" value="no-poverty">No Poverty</label>    
+                	<label><input type="checkbox" name="sdg" value="Zero Hunger">Zero Hunger</label>
+                        <label><input type="checkbox" name="sdg" value="Good Health and Well-being"> Good Health and Well-being</label>
+                        <label><input type="checkbox" name="sdg" value="Quality Education"> Quality Education</label>
+                        <label><input type="checkbox" name="sdg" value="Gender Equality"> Gender Equality</label>
+                        <label><input type="checkbox" name="sdg" value="Clean Water and Sanitation"> Clean Water and Sanitation</label>
+                        <label><input type="checkbox" name="sdg" value="Affordable and Clean Energy"> Affordable and Clean Energy</label>
+                        <label><input type="checkbox" name="sdg" value="Decent Work and Economic Growth"> Decent Work and Economic Growth</label>
+                        <label><input type="checkbox" name="sdg" value="Industry, Innovation and Infrastructure"> Industry, Innovation and Infrastructure</label>
+                        <label><input type="checkbox" name="sdg" value="Reduced Inequalities"> Reduced Inequalities</label>
+                        <label><input type="checkbox" name="sdg" value="Sustainable Cities and Communities"> Sustainable Cities and Communities</label>
+                        <label><input type="checkbox" name="sdg" value="Responsible Consumption and Production"> Responsible Consumption and Production</label>
+                        <label><input type="checkbox" name="sdg" value="Climate Action"> Climate Action</label>
+                        <label><input type="checkbox" name="sdg" value="Life Below Water"> Life Below Water</label>
+                        <label><input type="checkbox" name="sdg" value="Life on Land"> Life on Land</label>
+                        <label><input type="checkbox" name="sdg" value="Peace, Justice and Strong Institutions"> Peace, Justice and Strong Institutions</label>
+                        <label><input type="checkbox" name="sdg" value="Partnerships for the Goals"> Partnerships for the Goals</label> 
+                        
+            </div>
+                        <br> </br>
+           <center> <button type="submit">Submit</button>
+        </form>
+		
+		<br></br>
+  <a href="Other Works.html">Back to Works</a>
+  
+    </div>
+	
+	
+	
+</body>
+</html>

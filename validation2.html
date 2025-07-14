@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Rating</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #cc0000;
+    }
+    .rating-group {
+      margin-bottom: 15px;
+    }
+    label {
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+	
+	button:hover{ 
+	background-color: #912E23
+	}
+	
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<center>
+<br> </br>
+  <h2>Rate the Content</h2>
+  <form id="ratingForm"></form>
+  <button onclick="submitRatings()">Submit Rating</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    const criteria = ['Content', 'Video Editing', 'Consistency', 'Engagement of Audience'];
+    const form = document.getElementById('ratingForm');
+
+    for (let i = 0; i < criteria.length; i++) {
+      const group = document.createElement('div');
+      group.className = 'rating-group';
+
+      const label = document.createElement('label');
+      label.textContent = `${criteria[i]}: `;
+      group.appendChild(label);
+
+      for (let rating = 1; rating <= 5; rating++) {
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = `rating${i}`;
+        radio.value = rating;
+
+        const radioLabel = document.createElement('label');
+        radioLabel.textContent = rating;
+
+        group.appendChild(radio);
+        group.appendChild(radioLabel);
+      }
+
+      form.appendChild(group);
+    }
+
+    function submitRatings() {
+      let total = 0;
+      let count = 0;
+
+      for (let i = 0; i < criteria.length; i++) {
+        const ratings = document.getElementsByName(`rating${i}`);
+        let selected = false;
+
+        for (let r of ratings) {
+          if (r.checked) {
+            total += parseInt(r.value);
+            selected = true;
+            break;
+          }
+        }
+
+        if (!selected) {
+          alert(`Please rate: ${criteria[i]}`);
+          return;
+        }
+
+        count++;
+      }
+
+      const average = (total / count).toFixed(2);
+      document.getElementById('result').textContent = `Thank you! The overall average rate is ${average}/5.`;
+    }
+  </script>
+
+</body>
+</html>

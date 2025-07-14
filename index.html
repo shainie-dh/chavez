@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo"> HOME </div>
+    <div class="nav-items">
+      <a href="contact_form_google_sheet.html">Contact Me</a>
+      <a href="Other Works.html">Other Works</a>
+    </div>
+    <button id="darkModeToggle">Light Mode</button>
+  </nav>
+
+  <header>
+    <h1>Lilypich Meh</h1>
+    <p class="tagline">Welcome to my Website!! If you are interested, consider following me on my Instagram, which is located underneath this text. ❤️</p>
+    <p><a href="https://www.instagram.com/lilypich_meh_uwu?igsh=MTg0OW1od2RtdXkxOA==" class="btn-link">Visit my Instagram</a></p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <img src="myprofile.jpg" alt="LilyPich Meh" />
+      <p>Hello to the person who visited the website! You may address me as Lily. This website is dedicated to my YouTube channel. Feel free to explore, learn, and enjoy my content! ❤️❤️</p>
+    </section>
+
+    <section class="video-previews">
+      <h2>Featured Videos</h2>
+      <div class="video-container">
+        <div class="video-thumbnail">
+          <a href="vid1.mp4" target="_blank">
+            <img src="yrnma_image1.jpg" alt="Video 1 Thumbnail" />
+            <p>Most Viewed Video</p>
+          </a>
+        </div>
+        <div class="video-thumbnail">
+          <a href="vid2.mp4" target="_blank">
+            <img src="Ynma_image 2.jpg" alt="Video 2 Thumbnail" />
+            <p>Season 2 || Alpha's Intertwined|| Episode 1</p>
+          </a>
+        </div>
+        <div class="video-thumbnail">
+          <a href="vid3.mp4" target="_blank">
+            <img src="soisly_image.jpg" alt="Video 3 Thumbnail" />
+            <p>Soulmate Or Not I'll Still Like you // GLMM // Original? //</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <h2>Subscriber Count Goal</h2>
+      <ul>
+        <li>1k subscribers  ✅</li>
+        <li>10k subscribers ✅</li>
+        <li>20k subscribers ✅</li>
+        <li>30k subscribers ✅</li>
+        <li>40k subscribers ✅</li>
+        <li>50k subscribers ✅</li>
+        <li>60k subscribers N/A: not yet reached</li>
+        <li>70k subscribers N/A: not yet reached</li>
+        <li>80k subscribers N/A: not yet reached</li>
+      </ul>
+    </section>
+
+    <section class="quote">
+      <blockquote>
+        “When you have a chance to make a choice, make one that you know you won't regret.”
+      </blockquote>
+    </section>
+
+    <section class="cta">
+      <h2>Learn More</h2>
+      <p>I only make videos for fun and to have some entertainment. As much as I would want to say something about myself, I'd rather prefer my person to remain private. Anyways if ever you want to watch my intro, the video is right underneath this lols</p>
+      <br> </br>
+      <a href="Intro and Outro_.mp4" target="_blank" class="btn">Intro Video</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('darkModeToggle');
+
+    function updateButtonText() {
+      if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = 'Dark Mode';
+      } else {
+        toggleButton.textContent = 'Light Mode';
+      }
+    }
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+      updateButtonText();
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+      updateButtonText();
+    });
+  </script>
+</body>
+</html>

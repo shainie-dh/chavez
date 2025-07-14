@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Contact</title>
+  <style>
+    body {
+      background: linear-gradient(90deg, rgba(252, 211, 174, 1) 0%, rgba(207, 194, 149, 1) 100%);
+      line-height: 1.6;
+      padding: 40px;
+      font-size: 16px;
+    }
+
+    nav {
+      height: 50px;
+      background: linear-gradient(90deg, rgba(230, 184, 145, 1) 0%, rgba(150, 128, 95, 0.63) 100%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0rem calc((100vw - 1300px) / 2);
+    }
+
+    .logo {
+      color: #FFF1D1;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-style: italic;
+      padding: 0 2rem;
+      font-family: "Fantasy", Copperplate;
+    }
+
+    .logo:hover {
+      color: #B86B56;
+      background: #F7C6A3;
+      border-radius: 10px;
+      transition: background-color 0.7s, color 0.7s;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #FFF1D1;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-family: Copperplate;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #B86B56;
+      background: #F7C6A3;
+      transition: background-color 0.7s, color 0.7s;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 10px 10px;
+      background: linear-gradient(90deg, rgba(230, 184, 145, 1) 0%, rgba(150, 128, 95, 0.63) 100%);
+      color: #fff;
+      border-radius: 2px;
+    }
+
+    header h1 {
+      font-size: 5rem;
+      font-family: papyrus;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 6px;
+      text-shadow: 5px 4px gray;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #FFFFFF;
+      text-align: center;
+      font-family: "Monospace", Courier New;
+      font-weight: bold;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      width: 400px;
+      margin: 50px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #cc0000;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 90%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .error {
+      border: 2px solid red !important;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 50%;
+      padding: 10px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #990000;
+    }
+
+    #formMessage {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .failure {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      background: linear-gradient(90deg, rgba(230, 184, 145, 1) 0%, rgba(150, 128, 95, 0.63) 100%);
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 10px;
+    }
+
+    /* 🎥 Video popup styling */
+    #videoPopup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    #successVideo {
+      width: 300px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">CONTACT</div>
+    <div class="nav-items">
+      <a href="index.html">Home</a>
+      <a href="Other Works.html">Other Works</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Lilypich Meh</h1>
+    <p class="tagline">Send me some comments or feedbacks, it helps me get motivated! P.S. You guys can send ideas on what content I should do next. :></p>
+  </header>
+
+  <div class="container">
+    <h2>Feedbacks or Comments</h2>
+
+    <form id="registrationForm">
+      <label>Full Name:</label>
+      <input type="text" name="Firstname" required>
+
+      <label>Email:</label>
+      <input type="email" name="Email" required>
+
+      <label>Comment (optional):</label>
+      <textarea name="Comment" rows="4" cols="50" placeholder="Leave a comment..."></textarea>
+
+      <center><button type="submit">Submit</button></center>
+    </form>
+
+    <div id="formMessage"></div>
+  </div>
+
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+
+  <div id="videoPopup">
+    <video id="successVideo" autoplay muted playsinline>
+      <source src="newest animation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxtoq0GLNpPnZG3JoJ08G17-uliDVSF3dRrFweGFpX_w_SZDegagpARHAiUoDWEGl2M/exec";
+    const form = document.getElementById("registrationForm");
+    const messageBox = document.getElementById("formMessage");
+    const emailInput = form.querySelector('input[name="Email"]');
+    const videoPopup = document.getElementById("videoPopup");
+    const successVideo = document.getElementById("successVideo");
+
+    form.addEventListener("submit", (e) => {
+e.preventDefault();
+ 
+    let valid = true;
+   messageBox.textContent = "";
+   messageBox.className = "";
+ 
+    const inputs = form.querySelectorAll("input");
+ 
+    let i = 0;
+    while (i < inputs.length) {
+    inputs[i].classList.remove("error");
+    i++;
+}
+ 
+    let j = 0;
+    while (j < inputs.length) {
+    if (inputs[j].value.trim() === "") {
+    inputs[j].classList.add("error");
+    valid = false;
+}
+  j++;
+}
+ 
+    if (!emailInput.value.includes("@gmail.com")) {
+    emailInput.classList.add("error");
+    messageBox.textContent = "❌ Please enter a Gmail address (must contain '@gmail.com').";
+    messageBox.classList.add("failure");
+    return;
+}
+ 
+    if (!valid) {
+    messageBox.textContent = "❌ Please fill out all required fields.";
+    messageBox.classList.add("failure");
+    return;
+}
+ 
+    fetch(scriptURL, {
+    method: "POST",
+    body: new FormData(form),
+})
+    .then(response => {
+    messageBox.textContent = "✅ You have successfully submitted the form. Thank you for the wonderful feedback!";
+    messageBox.classList.add("success");
+    form.reset();
+    
+   alert("Yippie!! Thank you for submitting! Here have a cookie, you deserve it 🍪🍪!!");
+ 
+    videoPopup.style.display = "block";
+    successVideo.currentTime = 0;
+    successVideo.play();
+    
+    successVideo.onended = () => {
+    videoPopup.style.display = "none";
+};
+ 
+    setTimeout(() => {
+    videoPopup.style.display = "none";
+},  5000);
+})
+    .catch(error => {
+    messageBox.textContent = "❌ There was an error sending your message.";
+    messageBox.classList.add("failure");
+    console.error("Error!", error.message);
+  });
+});
+  </script>
+
+</body>
+</html>

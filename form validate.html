@@ -1,0 +1,263 @@
+<html>
+<head>
+  <title>Form Contact</title>
+	<script src ="style.js"></script>
+  <style>
+    body {
+      background: linear-gradient(90deg, rgba(252, 211, 174, 1) 0%, rgba(207, 194, 149, 1) 100%);
+      line-height: 1.6;
+	  padding: 40px;
+      font-size: 16px;
+    }
+
+nav {
+	height: 50px;
+	background: linear-gradient(90deg, rgba(230, 184, 145, 1) 0%, rgba(150, 128, 95, 0.63) 100%);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+.logo {
+	color: #FFF1D1;
+	font-size: 1.5rem;
+	font-weight: bold;
+	font-style: italic;
+	padding: 0 2rem;
+	font-family: "Fantasy", Copperplate;
+}
+
+.logo:hover {
+	color: #B86B56;
+	padding: 0 2rem;
+	background: #F7C6A3;
+	border-radius: 10px;
+	transition: background-color 0.7s;
+	transition: color 0.7;
+}
+
+nav a {
+	text-decoration: none;
+	color: #FFF1D1;
+	padding: 2.5rem;
+	padding: 12px 20px;
+	border-radius: 10px;
+	font-family: Copperplate;
+	font-weight: bold;
+}
+
+nav a:hover {
+	padding: 12px 20px;
+	color: #B86B56;
+	background: #F7C6A3;
+	border-radius: 10px;
+	transition: background-color 0.7s;
+	transition: color 0.7;
+}
+
+header {
+  text-align: center;
+  padding: 40px 10px 10px;
+  background: linear-gradient(90deg, rgba(230, 184, 145, 1) 0%, rgba(150, 128, 95, 0.63) 100%);
+  color: #fff;
+  border-radius: 2px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-family: papyrus;
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 6px;
+  text-shadow: 5px 4px gray;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 1.4;
+  font-family: "Monospace", Courier New;
+  font-weight: bold;
+}
+
+.container {
+      background-color: #ffffff;
+      padding: 30px;
+      width: 400px;
+      margin: 50px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+h2 {
+      text-align: center;
+      color: #cc0000;
+}
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+      width: 90%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .error {
+      border: 2px solid red !important;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 50%;
+      padding: 10px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #990000;
+    }
+
+    #formMessage {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .failure {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+	
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  background: linear-gradient(90deg, rgba(230, 184, 145, 1) 0%, rgba(150, 128, 95, 0.63) 100%);
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 10px;
+  }
+  
+  </style>
+</head>
+<body>
+
+<nav>
+	<div class="logo"> CONTACT </div>
+	<div class="nav-items">
+		<a href="index.html">Home</a>
+		<a href="Other Works.html"> Other Works</a>
+		</nav>
+		</div>
+	 <header>
+    <h1>Lilypich Meh</h1>
+    <p class="tagline">Send me Some comments or feedbacks, it helps me get motivated! P.S you guys can send me ideas on what kind of content you want me to do next. :></p>
+  </header>
+  
+
+<div class="container">
+  <h2>Feedbacks or Comments</h2>
+
+  <form id="registrationForm">
+    <label>Full Name:</label>
+    <input type="text" name="Firstname">
+
+    <label>Email:</label>
+    <input type="email" name="Email">
+
+    <label>Age:</label>
+    <input type="number" name="Age">
+
+    <label>Comment (optional):</label>
+    <textarea name="Comment" rows="4" cols="50" placeholder="Leave a comment..."></textarea>
+
+    <center><button type="button" onclick="validateForm()">Submit</button></center>
+  </form>
+
+  <div id="formMessage"></div>
+</div>
+
+<script>
+  function validateForm() {
+    const form = document.getElementById("registrationForm");
+    const inputs = form.querySelectorAll("input");
+    const messageBox = document.getElementById("formMessage");
+    const emailInput = form.querySelector('input[name="Email"]');
+ 
+    let allFilled = true;
+    let validEmail = true;
+ 
+    messageBox.innerText = "";
+    messageBox.className = "";
+ 
+    let i = 0;
+    while (i < inputs.length) {
+      inputs[i].classList.remove("error");
+      i++;
+    }
+ 
+    i = 0;
+    while (i < inputs.length) {
+      if (inputs[i].value.trim() === "") {
+        inputs[i].classList.add("error");
+        allFilled = false;
+      }
+      i++;
+    }
+ 
+    if (emailInput.value.trim() !== "" && !emailInput.value.includes("@gmail.com")) {
+      emailInput.classList.add("error");
+      validEmail = false;
+    }
+ 
+    if (!allFilled) {
+      messageBox.innerText = "❌ Please fill out all fields.";
+      messageBox.classList.add("failure");
+    } else if (!validEmail) {
+      messageBox.innerText = "❌ Please enter the Gmail address (hint: should contain '@gmail.com').";
+      messageBox.classList.add("failure");
+    } else {
+      messageBox.innerText = "✅ You have successfully submitted the form. Thank you for the wonderful Feedback!";
+      messageBox.classList.add("success");
+      form.reset();
+      alert("Yippie!! Thank you for submitting! Here have a cookie, you deserve it 🍪🍪!!");
+      form.reset();
+    }
+  }
+</script>
+
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+
+</body>
+</html>
